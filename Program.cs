@@ -4,13 +4,9 @@ namespace CPJT250211makeclass
 {
     internal class Program
     {
-        static void Sample()
-        {
-            Player player = new Player();
-        }
-
         static void Main(string[] args)
         {
+            #region test
             Player player = new Player();
 
             Random rand = new Random();
@@ -45,6 +41,7 @@ namespace CPJT250211makeclass
                 for (int i = 0; i < goblins.Length; i++)
                 {
                     goblins[i].Move();
+                    goblins[i].Die();
                 }
                 for (int i = 0; i < slimes.Length; i++)
                 {
@@ -55,6 +52,7 @@ namespace CPJT250211makeclass
                     boars[i].Move();
                 }
             }
+            #endregion
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CPJT250211makeclass
 {
-    public class Player
+    public class Player : Character
     {
         public int Hp;
         public int Gold;

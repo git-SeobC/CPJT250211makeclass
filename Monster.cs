@@ -6,46 +6,42 @@ using System.Threading.Tasks;
 
 namespace CPJT250211makeclass
 {
-    public abstract class Monster
+    public abstract class Monster : Character
     {
-        public Monster() { }
-        ~Monster() { }
+        public Monster()
+        {
+            Console.WriteLine("몬스터 생성자");
+        }
+        ~Monster()
+        {
+            Console.WriteLine("몬스터 소멸자");
+        }
 
-
-        public int hp;
-        public int gold;
+        public int Hp { get; set; }
+        public int Gold { get; set; }
 
         public void Attack()
         {
-            Console.WriteLine("Attack");
+            Console.WriteLine("Moster Attack");
         }
 
         public void Die()
         {
-            Console.WriteLine("Died");
+            Console.WriteLine("Moster Died");
         }
 
-        public void Move()
+        public virtual void Move() // 자식 클래스에서 오버라이드될 함수를 표현 할때 virtual 키워드 사용
         {
-            Console.WriteLine("Move");
+            Console.WriteLine("Moster Move");
         }
     }
 
     public class Goblin : Monster
     {
-        public Goblin() { hp = 10; gold = 10; }
+        public Goblin() { Hp = 10; Gold = 10; }
         ~Goblin() { }
-        public void Attack()
-        {
-            Console.WriteLine("Goblin Attack");
-        }
 
-        void Die()
-        {
-            Console.WriteLine("Goblin Died");
-        }
-
-        public void Move()
+        public override void Move() // 자식 클래스에서 오버라이드된 함수를 표현 할 때 override 키워드 써주어야 함
         {
             Console.WriteLine("Goblin Move");
         }
